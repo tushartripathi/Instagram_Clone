@@ -57,6 +57,7 @@ public class variablesGetterSetter
     {
 
         if(singleton == null)
+
         {
             singleton = new variablesGetterSetter();
         }
