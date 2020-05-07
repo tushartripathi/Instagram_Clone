@@ -2,6 +2,7 @@ package com.vubird.instagramclone;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -92,12 +93,17 @@ public class MainActivity extends AppCompatActivity {
         allKickBoxer = "";
         punchPower = "";
         ParseQuery<ParseObject>  queryAll = ParseQuery.getQuery("kickBoxer");
+
+        queryAll.whereGreaterThanOrEqualTo("punchPower",500);
+
         queryAll.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e)
             {
-                if(!objects.isEmpty())
+
+                if(objects != null)
                 {
+                    FancyToast.makeText(MainActivity.this, "YO " ,FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
 
 
                     for(ParseObject kickBoxerParseObj :  objects) {
@@ -108,8 +114,18 @@ public class MainActivity extends AppCompatActivity {
                     FancyToast.makeText(MainActivity.this, punchPower ,FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
 
                 }
+                else
+                {
+                    FancyToast.makeText(MainActivity.this, "Yo" ,FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+                }
             }
         });
 
+    }
+
+    public void ChangeActivity(View view)
+    {
+        Intent i = new Intent(this, SignUpLoginActivity.class);
+        startActivity(i);
     }
 }
