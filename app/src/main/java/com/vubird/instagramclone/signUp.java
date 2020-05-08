@@ -48,8 +48,8 @@ public class signUp extends AppCompatActivity {
 
         if(ParseUser.getCurrentUser()!=null)
         {
-//            Intent i = new Intent(this, SignUpLoginActivity.class);
-//            startActivity(i);
+            Intent i = new Intent(this, SocialMediaAcitvity.class);
+            startActivity(i);
         }
     }
 
@@ -91,8 +91,8 @@ public class signUp extends AppCompatActivity {
 
     public void gotoWelcome()
     {
-//        Intent i = new Intent(this, SignUpLoginActivity.class);
-//        startActivity(i);
+        Intent i = new Intent(this, SocialMediaAcitvity.class);
+        startActivity(i);
     }
 
     public  void rootClick(View view)

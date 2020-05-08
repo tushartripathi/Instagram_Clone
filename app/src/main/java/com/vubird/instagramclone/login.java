@@ -41,7 +41,8 @@ public class login extends AppCompatActivity {
 
         if(ParseUser.getCurrentUser()!=null)
         {
-//            Intent i = new Intent(this, SignUpLoginActivity.class);
+            ParseUser.logOut();
+//            Intent i = new Intent(this, SocialMediaAcitvity.class);
 //            startActivity(i);
         }
 
