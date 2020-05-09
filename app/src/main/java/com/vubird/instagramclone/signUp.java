@@ -1,5 +1,6 @@
 package com.vubird.instagramclone;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -7,6 +8,8 @@ import android.content.Intent;
 import android.drm.ProcessedData;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodManager;
@@ -92,21 +95,35 @@ public class signUp extends AppCompatActivity {
     public void gotoWelcome()
     {
         Intent i = new Intent(this, SocialMediaAcitvity.class);
+        finish();
         startActivity(i);
     }
 
     public  void rootClick(View view)
     {
-        try {
-
-
+        try
+        {
             InputMethodManager inputMethod = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
             inputMethod.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }
         catch (Exception e)
-        {
+        { }
+    }
 
-        }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.my_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

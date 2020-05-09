@@ -22,7 +22,7 @@ public class Profiletab extends Fragment implements View.OnClickListener {
 
 
     EditText nameET, professionET, hobbiesET, sportsET, bioET ;
-    Button btn, logoutbtn ;
+    Button btn ;
 
 
     public Profiletab() {
@@ -31,23 +31,18 @@ public class Profiletab extends Fragment implements View.OnClickListener {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         View view = inflater.inflate(R.layout.fragment_profiletab, container, false);
-
         nameET =   view.findViewById(R.id.nameBox);
         bioET =   view.findViewById(R.id.bioBox);
         professionET =   view.findViewById(R.id.ProfessionBox);
         hobbiesET =   view.findViewById(R.id.hobbiesBox);
         sportsET =   view.findViewById(R.id.sportsBox);
         btn = view.findViewById(R.id.button);
-        logoutbtn = view.findViewById(R.id.logoutbtn);
-        logoutbtn.setOnClickListener(this);
         btn.setOnClickListener(this);
-
-
         return view;
+
         }
 
 
@@ -86,21 +81,10 @@ public class Profiletab extends Fragment implements View.OnClickListener {
     {
         switch (view.getId())
         {
-
-            case R.id.logoutbtn:
-                    LogOut();
-                    break;
             case R.id.button:
                 updateOnClick(ParseUser.getCurrentUser());
                 break;
         }
     }
 
-    public void LogOut()
-    {
-        ParseUser.logOut();
-        Intent i = new Intent(getContext(), login.class);
-        startActivity(i);
-
-    }
 }

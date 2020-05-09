@@ -82,7 +82,9 @@ public class login extends AppCompatActivity {
     public void gotoWelcome()
     {
             Intent i = new Intent(this, SocialMediaAcitvity.class);
+            finish();
             startActivity(i);
+
     }
     public  void rootClick(View view)
     {

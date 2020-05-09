@@ -30,6 +30,7 @@ dependencies {
     implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.6'
     implementation "com.github.parse-community.Parse-SDK-Android:parse:1.24.1"
     implementation 'com.google.android.material:material:1.1.0-alpha07'
+    implementation 'com.github.mjn1369:prettydialog:1.0.4'
 }
 
 repositories {
